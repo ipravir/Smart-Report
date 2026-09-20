@@ -1,11 +1,3 @@
-I’ve designed numerous processes, reports, and APIs. However, traditional development often ties solutions tightly to specific user requirements, which limits flexibility. My goal has always been to build **open, configurable solutions** where users can adjust behavior through settings rather than code changes.
-
-A recurring challenge remains: How do we design systems that give users maximum flexibility in how they query and retrieve information from the backend?
-
-With the emergence of **LLMs** and the **Model Context Protocol (MCP)**, this challenge is becoming easier to solve. By exposing SAP backend services through MCP, users can interact with SAP data using natural language, and the LLM can generate meaningful responses dynamically.
-
-To explore this idea further, I experimented with enabling LLM‑based querying on report data — essentially creating a **Smart Report** concept. For testing, I used the SAP **VA05N** report, surfaced its data through a SAPUI5 application, and added intelligent features powered by LLMs. This approach demonstrates how traditional SAP reports can evolve into flexible, conversational, and insight‑driven tools.
-
 The Architecture :
 
 ![](./Smart%20Report_images/image-001.png)
@@ -104,7 +96,5 @@ Added another feature specifically for Date‑and‑Value datasets that allows u
 For example, in the scenario below, the system calculates the total net value based on the “created‑on” dates and then applies a forecast to generate the next five future periods.
 
 ![](./Smart%20Report_images/image-011.gif)
-
-All program and logic details are available into :
 
 This solution is built on an SAP EHP8 system and uses a local Ollama model, which is perfectly suitable for development, testing, and proving the overall concept. Moving to the SAP AI Core LLM service in the future can make responses faster, improve performance under heavy workloads, and provide better reliability as the application grows. The project also updates SAP ABAP syntax based on the system and kernel version, using newer and more efficient language features to improve runtime performance and maintainability.
