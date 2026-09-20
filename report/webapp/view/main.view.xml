@@ -1,0 +1,56 @@
+<mvc:View
+    controllerName="report.controller.main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+        titleAlignment="Center"
+    >
+        <content>
+            <smartTable:SmartTable
+                id="smartTableSalesOrders"
+                entitySet="va05nSet"
+                smartFilterId="smartFilterBar"
+                tableType="ResponsiveTable"
+                useVariantManagement="true"
+                useTablePersonalisation="true"
+                showRowCount="true"
+                enableAutoBinding="true"
+                persistencyKey="SalesOrderTableKey"
+                initiallyVisibleFields="Vbeln,Auartt,Auart,Kunnr,Erdat,Audat,Bstkd,Ernam,Vkorg,Vtweg,Spart,Vkbur,Vkgrp,Waerk,Netwr"
+                beforeRebindTable="onBeforeRebindTable"
+                header="Line Items"
+                demandPopin="true"
+                class="sapUiResponsiveContentPadding"
+                showDetailsButton="true"
+                enableAutoColumnWidth="true"
+                placeToolbarInTable="true"
+            >
+                <smartTable:customToolbar>
+                    <OverflowToolbar id="toolbar" design="Solid">
+                        <ToolbarSpacer id="spacer" />
+                        <Button
+                            id="bttnActivate"
+                            press=".onDuckDBPress"
+                            icon="sap-icon://activate"
+                            tooltip="{i18n>Activate}"
+                            type="Accept"
+                        />
+                        <Button
+                            id="bttnAI"
+                            press=".onAIPress"
+                            icon="sap-icon://ai"
+                            tooltip="{i18n>Chat}"
+                            enabled="{appModel>/bRagChat}"
+                        />
+                    </OverflowToolbar>
+                </smartTable:customToolbar>
+                <Table sticky="ColumnHeaders,HeaderToolbar">
+    </Table>
+            </smartTable:SmartTable>
+        </content>
+    </Page>
+</mvc:View>

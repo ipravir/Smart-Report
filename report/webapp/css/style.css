@@ -1,0 +1,24 @@
+.myStickyToolbar {
+    position: sticky !important;
+    position: -webkit-sticky !important;
+    top: 0 !important;
+    z-index: 101 !important; /* Ensure it layers perfectly over rows */
+}
+
+/* Align the column fields row directly below the fixed toolbar height */
+.sapUiCompSmartTable .sapMListHeader {
+    position: sticky !important;
+    top: 3rem !important; /* Matches standard toolbar height */
+    z-index: 100 !important;
+}
+
+/* Restrain custom PNG image inside SAPUI5 Button */
+.customToolIcon .sapMBtnCustomIcon,
+.customToolIcon.sapMBtn .sapMBtnIcon {
+    width: 1.25rem;
+    height: 1.25rem;
+    max-width: 1.25rem;
+    max-height: 1.25rem;
+    object-fit: contain;
+    vertical-align: middle;
+}

@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: report_analytics_api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_NAME=Production Report QA Engine
+      - DEBUG=False
+      # Connect directly to your existing Ollama host process
+      - OLLAMA_HOST=http://host.docker.internal:11434
+      - OLLAMA_SQL_MODEL=qwen2.5-coder:latest
+      - OLLAMA_SYNTHESIS_MODEL=llama3.1:latest
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
